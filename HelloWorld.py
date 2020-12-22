@@ -12,8 +12,14 @@ for iter in vowels:
     list.append(iter)
 print (list)
 
-#with open('employee_file.csv', mode='w') as employee_file:
-#    employee_writer = csv.writer(employee_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-#
-#    employee_writer.writerow(['John Smith', 'Accounting', 'November'])
-#    employee_writer.writerow(['Erica Meyers', 'IT', 'March'])
+myFile = open('/etc/os-release')
+print (myFile.read())
+myFile.seek(0)
+fileList = myFile.readlines()
+print (fileList[0])
+print (fileList[-1])
+myFile.close()
+
+
+with open ('/etc/os-release',mode='r') as mySameFileAgain:
+    print (mySameFileAgain.read())
