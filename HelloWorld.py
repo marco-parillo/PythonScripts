@@ -12,7 +12,7 @@ for iter in vowels:
     list.append(iter)
 print (list)
 
-myFile = open('/etc/os-release')
+myFile = open('/etc/os-release','r')
 print (myFile.read())
 myFile.seek(0)
 fileList = myFile.readlines()
