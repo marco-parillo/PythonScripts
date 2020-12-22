@@ -3,8 +3,13 @@
 print ("hello world")
 print ('Hello world'[8])
 print ('tinker'[1:4])
-i = 1
-print (i)
+
+i = 2 
+if (i == 1):
+    print (i)
+else:
+    print ('i is not one')
+
 vowels="AEIOU"
 list = []
 for iter in vowels:
@@ -23,3 +28,5 @@ myFile.close()
 
 with open ('/etc/os-release',mode='r') as mySameFileAgain:
     print (mySameFileAgain.read())
+
+
