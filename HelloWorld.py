@@ -11,11 +11,15 @@ else:
     print ('i is not one')
 
 vowels="AEIOU"
-list = []
-for iter in vowels:
-    print("char:", iter)
-    list.append(iter)
-print (list)
+myList = []
+for letter in vowels:
+    print("char:", letter)
+    myList.append(letter)
+print (myList)
+
+myDictionary = {'Key1':'One', 'Key2':'Two'}
+for (key, value) in myDictionary.items():
+    print (value)
 
 myFile = open('/etc/os-release','r')
 print (myFile.read())
@@ -25,6 +29,8 @@ print (fileList[0])
 print (fileList[-1])
 myFile.close()
 
+#while condition:
+#else:
 
 with open ('/etc/os-release',mode='r') as mySameFileAgain:
     print (mySameFileAgain.read())
