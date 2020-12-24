@@ -20,6 +20,19 @@ print (myList)
 myDictionary = {'Key1':'One', 'Key2':'Two'}
 for (key, value) in myDictionary.items():
     print (value)
+print ('Key1' in myDictionary.keys())
+print ('Key3' in myDictionary.keys())
+print ('One' in myDictionary.values())
+print ('Three' in myDictionary.values())
+
+def look_up_function(inputDict, inputKey):
+    if (inputKey in inputDict.keys()):
+        return inputDict[inputKey] 
+    else:
+        return 'Input Key not found' 
+print (look_up_function(myDictionary,'Key1'))
+print (look_up_function(myDictionary,'Key2'))
+print (look_up_function(myDictionary,'Key3'))
 
 myFile = open('/etc/os-release','r')
 print (myFile.read())
@@ -31,8 +44,10 @@ myFile.close()
 
 #while condition:
 #else:
+#help (fileList.insert)
 
 with open ('/etc/os-release',mode='r') as mySameFileAgain:
-    print (mySameFileAgain.read())
+    contents = (mySameFileAgain.read())
+    print (contents.split('='))
 
 
