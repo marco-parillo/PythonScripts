@@ -17,6 +17,19 @@ for letter in vowels:
     myList.append(letter)
 print (myList)
 
+def alternatingCaseFunc(inString):
+    i = 0
+    outString = ''
+    while i < len(inString):
+        if i%2 == 0:
+            outString = outString + inString[i].upper()
+        else:    
+            outString = outString + inString[i].lower()
+        i = i + 1
+    return outString
+
+print (alternatingCaseFunc(vowels))
+
 myDictionary = {'Key1':'One', 'Key2':'Two'}
 for (key, value) in myDictionary.items():
     print (value)
