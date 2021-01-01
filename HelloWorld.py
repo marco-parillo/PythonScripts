@@ -55,9 +55,6 @@ print (fileList[0])
 print (fileList[-1])
 myFile.close()
 
-#while condition:
-#else:
-#help (fileList.insert)
 
 with open ('/etc/os-release',mode='r') as mySameFileAgain:
     contents = (mySameFileAgain.read())
