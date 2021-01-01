@@ -38,5 +38,5 @@ print (acct1.balance)
 # Withdrawal Accepted
 # 6. Make a withdrawal that exceeds the available balance
 acct1.withdraw(500)
-# Funds Unavailable!
 print (acct1.balance)
+# Funds Unavailable!
