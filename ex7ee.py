@@ -1,3 +1,6 @@
+'''
+Testing error and exception handling
+'''
 try:
     X = 5
     Y = 0
@@ -9,6 +12,9 @@ finally:
 
 
 def ask():
+    '''
+    Get square
+    '''
     done = False
     while not done:
         num = input('Enter a number (or q to quit): ')
