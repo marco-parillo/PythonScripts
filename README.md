@@ -14,3 +14,8 @@ to activate and deactivate the anaconda enviroment. Then
 ```
 $ anaconda-navigator 
 ```
+
+## Python Lint
+```
+$ pylint -r y scrapebook.py | more
+```
