@@ -8,33 +8,21 @@ import requests
 import bs4 # from sudo pacman -S python-beautifulsoup4
 
 BASE_URL = 'http://books.toscrape.com/catalogue/page-{}.html'
-CURRENT_URL = BASE_URL.format(1)
-# CURRENT_URL = BASE_URL.format(str(1))
-# ^^ Note that the str() was not necessary, as .format did the conversion
 
-webPage = requests.get(CURRENT_URL)
+for webPageNum in range(1,51): # 1-50 inclusive. in range (50) gets 0-49
+    CURRENT_URL = BASE_URL.format(webPageNum)
+    # CURRENT_URL = BASE_URL.format(str(1))
+    # ^^ Note that the str() was not necessary, as .format did the conversion
 
-soup = bs4.BeautifulSoup(webPage.text, "lxml")
-print (soup.select('title'))
-print ("------------------------------------------------------------------")
+    webPage = requests.get(CURRENT_URL)
+
+    soup = bs4.BeautifulSoup(webPage.text, "lxml")
+    print (soup.select('title')[0].text)
 
 
-for productPod in soup.select('.product_pod'):
-    if "star-rating Two" in str(productPod):
-        print (str(productPod)+ "\n++++++++++++++++++++++++++++++++++++")
-    else:
-        print ("n++++++++++++++++++++++++++++++++++++")
-
-# print ("------------------------------------------------------------------")
-# imageLink = imageElement['src']
-# imageURL = "https:" + str(imageLink)
-# print (imageURL)
-# print ("------------------------------------------------------------------")
-
-#read the image
-# imageLink = requests.get(imageURL)
-
-# Open file for binary writing
-# f = open ('scrape.jpg', 'wb')
-# f.write (imageLink.content)
-# f.close
+    for productPod in soup.select('.product_pod'):
+        if "star-rating Two" in str(productPod): #Two Star Review
+            # print the second a (hyperlink) indexed by 1, then the title attribute
+            print (str(productPod.select('a')[1]['title']))
+        else:
+            print ("Not a two-star review")
