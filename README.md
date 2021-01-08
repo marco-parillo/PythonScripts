@@ -19,3 +19,6 @@ $ anaconda-navigator
 ```
 $ pylint -r y scrapebook.py | more
 ```
+
+## Python to Mongo via Pandas
+https://python-pandas-mongo.readthedocs.io/
