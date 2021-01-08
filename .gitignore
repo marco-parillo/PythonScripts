@@ -1,5 +1,8 @@
 !.gitignore
 *.csv
+*.jpg
+*.jpeg
+*.pdf
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
