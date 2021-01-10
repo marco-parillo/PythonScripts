@@ -4,6 +4,7 @@
 https://github.com/Pierian-Data/Complete-Python-3-Bootcamp.git
 
 ## Anaconda
+https://aur.archlinux.org/packages/anaconda/
 Please run
 ```
 $ source /opt/anaconda/bin/activate root
