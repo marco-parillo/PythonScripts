@@ -4,7 +4,8 @@ Prints a local csv file.
 
 import sys
 import csv
-from PySide6 import QtCore, QtWidgets, QtGui
+# from PySide6 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets # , QtGui not needed?
 
 class MyWidget(QtWidgets.QWidget):
     '''
