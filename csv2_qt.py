@@ -7,7 +7,7 @@ import csv
 # from PySide6 import QtCore, QtWidgets, QtGui
 from PySide6 import QtCore, QtWidgets # , QtGui not needed?
 
-record_num = 0
+RECORD_NUM = 0
 
 class MyWidget(QtWidgets.QWidget):
     '''
@@ -18,8 +18,8 @@ class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
 
-        global record_num
-        
+        global RECORD_NUM
+
         try:
             with open('employee_file.csv', mode='r', encoding='utf-8') as employee_file:
                 csv_data = csv.reader (employee_file)
@@ -38,7 +38,7 @@ class MyWidget(QtWidgets.QWidget):
         self.layout.addWidget(self.text)
         self.layout.addWidget(self.button)
         self.setLayout(self.layout)
-        self.button.clicked.connect(self.magic (str(csv_list[record_num])))
+        self.button.clicked.connect(self.magic (str(csv_list[RECORD_NUM])))
 
     @QtCore.Slot()
     def magic(self, row_to_print):
@@ -46,9 +46,9 @@ class MyWidget(QtWidgets.QWidget):
         The MyWidget class has the magic member function that
         reads the csv file.
         '''
-        global record_num
+        global RECORD_NUM
         self.text.setText(row_to_print)
-        record_num = record_num + 1
+        RECORD_NUM = RECORD_NUM + 1
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
