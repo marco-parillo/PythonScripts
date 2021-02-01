@@ -39,6 +39,7 @@ class MyWidget(QtWidgets.QWidget):
         self.layout.addWidget(self.button)
         self.setLayout(self.layout)
         self.button.clicked.connect(self.magic (str(csv_list[RECORD_NUM])))
+        RECORD_NUM = RECORD_NUM + 1
 
     @QtCore.Slot()
     def magic(self, row_to_print):
@@ -47,8 +48,8 @@ class MyWidget(QtWidgets.QWidget):
         reads the csv file.
         '''
         global RECORD_NUM
-        self.text.setText(row_to_print)
         RECORD_NUM = RECORD_NUM + 1
+        self.text.setText(row_to_print)
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
