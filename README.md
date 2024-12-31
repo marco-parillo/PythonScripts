@@ -5,10 +5,8 @@
 - [Google's Python Class](https://developers.google.com/edu/python)
 
 ## Anaconda
-https://aur.archlinux.org/packages/anaconda/
-```
-```
-Please run
+- make https://aur.archlinux.org/packages/anaconda/
+- Then run:
 ```
 $ source /opt/anaconda/bin/activate root
 $ source /opt/anaconda/bin/deactivate root
