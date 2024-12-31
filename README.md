@@ -2,6 +2,7 @@
 
 ## Training
 https://github.com/Pierian-Data/Complete-Python-3-Bootcamp.git
+[Google's Python Class](https://developers.google.com/edu/python)
 
 ## Anaconda
 https://aur.archlinux.org/packages/anaconda/
