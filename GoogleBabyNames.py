@@ -35,12 +35,20 @@ Suggested milestones for incremental development:
 """
 
 def extract_names(filename):
-    f = open(filename, 'rt', encoding='utf-8')
-    for line in f:
-        year_match = re.search(r'Popularity\sin\s(\d+)', line)
-#       match = re.search(r'\d+', line)
-        if year_match:
-            print (year_match.group(1))
+    names = []
+    with open(filename, 'rt', encoding='utf-8') as f:
+        whole_file = f.read()
+    year_match = re.search(r'Popularity\sin\s(\d+)', whole_file)
+    if year_match:
+        names.append (year_match.group(1))
+    else:
+        sys.stderr.write("no year found\n")
+        sys.exit(1)
+    name_tuples = re.findall(r'<tr align="right"><td>(\d+)</td><td>(\w+)</td><td>(\w+)</td>', whole_file)
+    print (names)
+    for rank in name_tuples:
+        print (rank)
+#   print (name_tuples)
     return
 """
 Given a file name for baby.html, returns a list starting with the year string
