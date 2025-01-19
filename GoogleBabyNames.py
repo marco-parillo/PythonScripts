@@ -51,7 +51,12 @@ def extract_names(filename):
     for rank in name_tuples:
         boy_name_dict[rank[0]] = rank[1]
         girl_name_dict[rank[0]] = rank[2]
-    print (girl_name_dict)
+#   Print Boys and their ranks in Rank Order
+    for rank in sorted(boy_name_dict.keys()):
+        print (rank, boy_name_dict[rank])
+#   Print Girls in Alphabetical Name Order
+    for name in sorted(girl_name_dict.values()):
+        print (name)
     return
 """
 Given a file name for baby.html, returns a list starting with the year string
