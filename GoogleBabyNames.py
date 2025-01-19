@@ -36,6 +36,8 @@ Suggested milestones for incremental development:
 
 def extract_names(filename):
     names = []
+    boy_name_dict = {}
+    girl_name_dict = {}
     with open(filename, 'rt', encoding='utf-8') as f:
         whole_file = f.read()
     year_match = re.search(r'Popularity\sin\s(\d+)', whole_file)
@@ -45,10 +47,11 @@ def extract_names(filename):
         sys.stderr.write("no year found\n")
         sys.exit(1)
     name_tuples = re.findall(r'<tr align="right"><td>(\d+)</td><td>(\w+)</td><td>(\w+)</td>', whole_file)
-    print (names)
+#   name_tuples now holds ranknumber, boy's name, girl's name
     for rank in name_tuples:
-        print (rank)
-#   print (name_tuples)
+        boy_name_dict[rank[0]] = rank[1]
+        girl_name_dict[rank[0]] = rank[2]
+    print (girl_name_dict)
     return
 """
 Given a file name for baby.html, returns a list starting with the year string
