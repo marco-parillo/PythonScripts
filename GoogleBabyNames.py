@@ -48,15 +48,16 @@ def extract_names(filename):
         sys.exit(1)
     name_tuples = re.findall(r'<tr align="right"><td>(\d+)</td><td>(\w+)</td><td>(\w+)</td>', whole_file)
 #   name_tuples now holds ranknumber, boy's name, girl's name
+#   Since we sort boys by rank and girls by name, we select the 0th element for boys, but the last element for girls
     for rank in name_tuples:
         boy_name_dict[rank[0]] = rank[1]
-        girl_name_dict[rank[0]] = rank[2]
+        girl_name_dict[rank[2]] = rank[0]
 #   Print Boys and their ranks in Rank Order
     for rank in sorted(boy_name_dict.keys()):
         print (rank, boy_name_dict[rank])
 #   Print Girls in Alphabetical Name Order
-    for name in sorted(girl_name_dict.values()):
-        print (name)
+    for name in sorted(girl_name_dict.keys()):
+        print (name, girl_name_dict[name])
     return
 """
 Given a file name for baby.html, returns a list starting with the year string
